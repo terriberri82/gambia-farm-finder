@@ -1,0 +1,5 @@
+function SavedFarmPage(){
+return console.log("itworks")
+}
+
+export default  SavedFarmPage
