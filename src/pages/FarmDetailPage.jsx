@@ -1,6 +1,6 @@
 import '../App.css'
-import styles from './FarmDetailPage.module.css';
-import { useParams, Link, useNavigate } from "react-router"
+
+import { useParams, useNavigate } from "react-router"
 
 
 function FarmDetailPage({viewFarmName,viewArea,viewProduce,viewFarmType, viewDescription, viewPhone, viewSocialMedia}){
@@ -18,7 +18,13 @@ return (
     </ul>
     <p className={styles.description}>{viewDescription}</p>
     <span className={styles.phone}>{viewPhone}</span>
-    <span className={styles.socialMedia}>{viewSocialMedia}</span>
+    <div className={styles.socialMedia}>
+        {viewSocialMedia && Object.entries(viewSocialMedia).map(([platform, url])=>(
+           <a key={platform}href={url} target="_blank" rel="noreferrer">
+            {platform}
+           </a> 
+        ))}
+    </div>
     <span className={styles.typeFarm}>Farm Type:{viewFarmType}</span>
     <button className={styles.back} onClick={() => navigate(-1)}>Back</button>
     </>
