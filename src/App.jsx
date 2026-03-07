@@ -6,12 +6,12 @@ import FarmDetailPage from './pages/FarmDetailPage'
 import SavedFarmPage from './pages/SavedFarmPage'
 import NotFoundPage from './pages/NotFoundPage'
 import Header from './shared/Header.jsx'
-
+import styles from './shared/Header.module.css'
 
 function App() {
 
   return (
-    <div>
+    <main>
       <Header title="Gambia Farm Finder" /> 
       <Routes>
       <Route path="/" element={<HomePage />} />
@@ -19,8 +19,7 @@ function App() {
       <Route path="/saved" element={<SavedFarmPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
-    
-    </div>
+    </main>
       
   
   )

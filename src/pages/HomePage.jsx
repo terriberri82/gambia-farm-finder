@@ -2,9 +2,11 @@ import SearchBar from '../shared/SearchBar'
 import { useState } from 'react'
 import styles from './HomePage.module.css';
 import '../App.css'
+import FarmList from '../features/farms/FarmList' 
 
 function HomePage(){
 const [searchValue, setSearchValue] = useState('')
+const allFarms = []
     return(
         <>
         <div className={styles.welcome}>
@@ -15,18 +17,9 @@ const [searchValue, setSearchValue] = useState('')
             elementId="farm-search"
             labelText="Search Farms:"
             value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-      />
-
-      <>
-    <h2 className={styles.farmName}>Green Garden</h2>
-    <h3 className={styles.area}>Kololi</h3>
-     <ul className={styles.product}>
-      <li>Lettuce</li>
-    </ul>
-    <span className={styles.typeFarm}>Farm Type:Commercial</span>
-    <a className={styles.details} to="">View Details</a>
-    </>
+            onChange={(e) => setSearchValue(e.target.value)}/>
+        <FarmList 
+        allFarms={allFarms}/>
         </>
     )
 }

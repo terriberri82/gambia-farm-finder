@@ -1,7 +1,7 @@
 import styles from './FarmCard.module.css';
 import { Link } from "react-router";
 
-function FarmCard({viewFarmName,viewArea,viewProduce,viewFarmType}){
+function FarmCard({viewFarmName,viewArea,viewProduce,viewFarmType, farmId}){
  
 return (
     <>
@@ -13,7 +13,7 @@ return (
       ))}
     </ul>
     <span className={styles.typeFarm}>Farm Type:{viewFarmType}</span>
-    <Link className={styles.details} to="">View Details</Link>
+    <Link className={styles.details} to={`/farms/${farmId}`}>View Details</Link>
     </>
 )
 }
