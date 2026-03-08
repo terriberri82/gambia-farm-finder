@@ -16,7 +16,17 @@ function App() {
   const [allFarms, setAllFarms] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [savedFarms, setSavedFarms] =useState([]);
+ 
 
+  //handler function 
+const handleToggleSave = (farmId) => {
+  const updatedSaved = savedFarms.includes(farmId)
+    ? savedFarms.filter(id => id !== farmId)
+    : [...savedFarms, farmId]
+  setSavedFarms(updatedSaved)
+  localStorage.setItem("savedFarms", JSON.stringify(updatedSaved))
+}
   //useEffect
 useEffect(() => {
   const fetchAllFarms = async () => {
@@ -38,14 +48,22 @@ useEffect(() => {
   fetchAllFarms();
 }, []); 
 
+useEffect(() => {
+  const storedFarms = localStorage.getItem("savedFarms")
+  if (storedFarms){
+    setSavedFarms(JSON.parse(storedFarms))
+  }
+}, []); 
+
   return (
     <main>
       <Header title="Gambia Farm Finder" /> 
       <Routes>
-      <Route path="/" element={<HomePage allFarms={allFarms}/>} />
+      <Route path="/" element={<HomePage allFarms={allFarms} handleSave={handleToggleSave}/>} />
       <Route path="/about" element={<AboutPage />} />
-      <Route path="/farms/:id" element={<FarmDetailPage allFarms={allFarms} />} />
-      <Route path="/saved" element={<SavedFarmPage />} />
+      <Route path="/farms/:id" element={<FarmDetailPage allFarms={allFarms} handleToggleSave={handleToggleSave} 
+              savedFarms={savedFarms} />} />
+      <Route path="/saved" element={<SavedFarmPage savedFarms={savedFarms} allFarms={allFarms}/>} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
     

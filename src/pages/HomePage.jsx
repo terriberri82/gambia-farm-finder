@@ -6,7 +6,21 @@ import FarmList from '../features/farms/FarmList'
 
 function HomePage({allFarms}){
 const [searchValue, setSearchValue] = useState('')
+const [hasSearched, setHasSearched] = useState(false)
 
+//handler function
+ const onSubmit =() => {
+    console.log('submit clicked', searchValue)
+    setHasSearched(true);
+ }
+ const filteredFarms = allFarms.filter(farm => {
+    if (farm.name.toLowerCase().includes(searchValue.toLowerCase())||
+    farm.area.toLowerCase().includes(searchValue.toLowerCase())||
+    farm.produce.some(item => item.toLowerCase().includes(searchValue.toLowerCase()))){
+        return true;
+    }
+    return false
+ }) 
     return(
         <>
         <div className={styles.welcome}>
@@ -17,9 +31,9 @@ const [searchValue, setSearchValue] = useState('')
             elementId="farm-search"
             labelText="Search Farms:"
             value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}/>
-        <FarmList 
-        allFarms={allFarms}/>
+            onChange={(e) => setSearchValue(e.target.value)}
+            onSubmit={onSubmit}/>
+        {hasSearched &&  <FarmList allFarms={filteredFarms}/> }
         </>
     )
 }

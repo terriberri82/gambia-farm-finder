@@ -25,7 +25,7 @@ const InputStyle = styled.input`
 const Button = styled.button`
 background-color:rgba(5, 19, 10, 1) ;
 `
-function SearchBar({ elementId, labelText, onChange, value, onClick }){
+function SearchBar({ elementId, labelText, onChange, value, onSubmit }){
 
     return (
       <Wrapper>
@@ -37,7 +37,7 @@ function SearchBar({ elementId, labelText, onChange, value, onClick }){
         onChange={onChange}
         autoComplete="off"
       />
-      <Button onClick={onClick}>
+      <Button onClick={onSubmit}>
       Submit
     </Button>
     

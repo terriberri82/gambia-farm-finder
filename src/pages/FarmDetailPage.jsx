@@ -1,10 +1,11 @@
 import '../App.css'
+import FarmMap from '../shared/FarmMap';
 import styles from './FarmDetailPage.module.css';
-import { useParams, useNavigate } from "react-router"
+import { useParams, useNavigate, } from "react-router"
 
 
-function FarmDetailPage({allFarms}){
 
+function FarmDetailPage({allFarms, handleToggleSave, savedFarms}){
  const {id} = useParams()
 const navigate = useNavigate()
 if(!allFarms || allFarms.length ===0) {
@@ -14,6 +15,8 @@ const farm= allFarms.find((farm) => farm.id ===id)
 if (!farm){
     return <p>Farm Not Found!</p>
 }
+
+const isSaved=savedFarms.includes(farm.id)
    
 return (
     <>
@@ -35,6 +38,8 @@ return (
     </div>
     <span className={styles.typeFarm}>Farm Type:{farm.type}</span>
     <button className={styles.back} onClick={() => navigate(-1)}>Back</button>
+    <button className={styles.save} onClick={() => handleToggleSave(farm.id)}>{isSaved? 'Unsave':'Save'}</button>
+    <FarmMap lat={farm.lat} lng={farm.lng} name={farm.name}/>
     </>
 )
 }

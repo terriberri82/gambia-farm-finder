@@ -13,8 +13,6 @@ return(
             <NavLink to="/saved" className={({isActive}) =>isActive ? styles.active : styles.inactive}>Saved Farms</NavLink>
         </nav>
     </div>
-)
-
-}
+)}
 
 export default Header

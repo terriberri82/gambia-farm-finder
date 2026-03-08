@@ -12,14 +12,14 @@ farms, and add new farms to the directory.
 ## API Services
 This project uses two external services. You will need to create free accounts 
 for both:
-- **JSONBin.io** - hosts the farm data
-- **Google Maps** - powers the interactive map
+- **GitHub Gist** - hosts the farm data (public, no account needed)
+- **Google Maps** - powers the interactive map (free account required)
 
 ## Setup
 1. Clone the repo
 2. Run `npm install`
 3. Copy `.env.local.example` to `.env.local`
-4. Fill in your API keys in `.env.local`
+4. Fill in your Google Maps API key in `.env.local`
 5. Run `npm run dev`
 
 ## Environment Variables
@@ -28,4 +28,6 @@ Copy `.env.local.example` to `.env.local` and fill in your own API keys.
 ## Future Features
 - Search by plus code
 - Filter by additional regions across The Gambia
-- Edit and delete user-added farms
+- Filter by farm type
+- Delete user-added farms
+- Improve navigation experience between FarmDetailPage and search results so users are returned to their previous search results instead of a blank HomePage
