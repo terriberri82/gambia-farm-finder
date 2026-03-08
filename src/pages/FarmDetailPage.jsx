@@ -1,31 +1,39 @@
 import '../App.css'
-
+import styles from './FarmDetailPage.module.css';
 import { useParams, useNavigate } from "react-router"
 
 
-function FarmDetailPage({viewFarmName,viewArea,viewProduce,viewFarmType, viewDescription, viewPhone, viewSocialMedia}){
+function FarmDetailPage({allFarms}){
+
  const {id} = useParams()
-// const farm= allFarms.find((farm) => farm.id ===id)
 const navigate = useNavigate()
+if(!allFarms || allFarms.length ===0) {
+    return <p>Loading...</p>
+}
+const farm= allFarms.find((farm) => farm.id ===id)
+if (!farm){
+    return <p>Farm Not Found!</p>
+}
+   
 return (
     <>
-    <h2 className={styles.farmName}>{viewFarmName}</h2>
-    <h3 className={styles.area}>Area:{viewArea}</h3>
+    <h2 className={styles.farmName}>{farm.name}</h2>
+    <h3 className={styles.area}>Area:{farm.area}</h3>
      <ul className={styles.product}>
-      {viewProduce.map((produce) => (
+      {farm.produce.map((produce) => (
         <li key={produce}>{produce}</li>
       ))}
     </ul>
-    <p className={styles.description}>{viewDescription}</p>
-    <span className={styles.phone}>{viewPhone}</span>
+    <p className={styles.description}>{farm.description}</p>
+    <span className={styles.phone}>{farm.phone}</span>
     <div className={styles.socialMedia}>
-        {viewSocialMedia && Object.entries(viewSocialMedia).map(([platform, url])=>(
-           <a key={platform}href={url} target="_blank" rel="noreferrer">
+        {farm.socialMedia && Object.entries(farm.socialMedia).map(([platform, url])=>(
+           <a key={platform} href={url} target="_blank" rel="noreferrer">
             {platform}
            </a> 
         ))}
     </div>
-    <span className={styles.typeFarm}>Farm Type:{viewFarmType}</span>
+    <span className={styles.typeFarm}>Farm Type:{farm.type}</span>
     <button className={styles.back} onClick={() => navigate(-1)}>Back</button>
     </>
 )

@@ -4,9 +4,9 @@ import styles from './HomePage.module.css';
 import '../App.css'
 import FarmList from '../features/farms/FarmList' 
 
-function HomePage(){
+function HomePage({allFarms}){
 const [searchValue, setSearchValue] = useState('')
-const allFarms = []
+
     return(
         <>
         <div className={styles.welcome}>
