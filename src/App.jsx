@@ -11,7 +11,6 @@ import { useState, useEffect, useCallback } from 'react';
 const url = import.meta.env.VITE_GIST_URL;
 
 function App() {
-  
   const [allFarms, setAllFarms] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -45,7 +44,7 @@ function App() {
       }
     };
     fetchAllFarms();
-    return () => controller.abort()
+    return () => controller.abort();
   }, []);
 
   useEffect(() => {

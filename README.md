@@ -36,5 +36,7 @@ VITE_GIST_URL=your_github_gist_url
 - Add new farms to the directory
 - Filter by additional regions across The Gambia
 - Filter by farm type
-- Delete user-added farms
+- Delete/unsave user-added farms from the Saved Farms Page
 - Improve navigation experience between FarmDetailPage and search results so users are returned to their previous search results instead of a blank HomePage
+- Styling updates:
+    -Add Social Media Icons

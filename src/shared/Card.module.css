@@ -1,28 +1,27 @@
-.card{
-   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   text-align: center;
   width: 100%;
   max-width: 800px;
- transition: all 0.3s ease;
+  transition: all 0.3s ease;
   margin: 2em auto;
-  display:flex ;
-
-align-items: center;     
-height: auto;
-flex-direction: column;
-overflow-wrap: break-word;
+  display: flex;
+  align-items: center;
+  height: auto;
+  flex-direction: column;
+  overflow-wrap: break-word;
 }
-.card>ul{
-    display: flex;
+.card > ul {
+  display: flex;
   flex-wrap: wrap;
-    gap: 3em;
+  gap: 3em;
 }
-.card>ul>li{
-    list-style: none;   
+.card > ul > li {
+  list-style: none;
 }
-.card>p{
+.card > p {
   max-width: 50%;
   line-height: 1.6;
 }

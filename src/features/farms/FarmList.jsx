@@ -1,19 +1,20 @@
 import FarmCard from './FarmCard';
 
-function FarmList({allFarms}){
- return(
+function FarmList({ allFarms }) {
+  return (
     <div className="farm-list-container">
-        {allFarms && allFarms.map((farm)=>(
-         <FarmCard 
-            key={farm.id} 
+      {allFarms &&
+        allFarms.map((farm) => (
+          <FarmCard
+            key={farm.id}
             farmId={farm.id}
             viewFarmName={farm.name}
             viewArea={farm.area}
             viewProduce={farm.produce}
             viewFarmType={farm.type}
-             />
+          />
         ))}
     </div>
-)
+  );
 }
-export default FarmList
+export default FarmList;

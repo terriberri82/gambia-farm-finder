@@ -6,19 +6,18 @@
 }
 
 body {
-   font-family: var(--font-body);
+  font-family: var(--font-body);
   margin: 0;
   padding: 0;
   width: 100%;
   display: block;
-
 }
 h1,
 h2,
 h3,
 h4,
 h5,
-h6, 
+h6,
 span {
   font-family: var(--font-heading);
   letter-spacing: 0.2px;
@@ -37,8 +36,7 @@ li {
   line-height: 1.5;
   color: black;
 }
-main{
-     padding-top: 160px; 
-     
- width: 100%;
+main {
+  padding-top: 150px;
+  width: 100%;
 }
