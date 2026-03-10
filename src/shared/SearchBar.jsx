@@ -40,7 +40,6 @@ function SearchBar({ elementId, labelText, onChange, value, onSubmit }){
       <Button onClick={onSubmit}>
       Submit
     </Button>
-    
     </Wrapper>
 )
   }

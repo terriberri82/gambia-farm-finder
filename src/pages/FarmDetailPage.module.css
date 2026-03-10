@@ -1,0 +1,13 @@
+.pageContainer {
+ width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.socialMedia {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}

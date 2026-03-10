@@ -7,8 +7,7 @@ farms, and add new farms to the directory.
 
 ## Dependencies
 - **react-router** - handles client-side routing
-- **@vis.gl/react-google-maps** - renders interactive maps (manipulates the DOM directly)
-- leaflet – open-source library for rendering interactive maps
+- leaflet – open-source library for rendering interactive maps (manipulates the DOM directly)
 
 ## API Services
 This project uses two external services. 

@@ -13,13 +13,15 @@
   text-align: center;
  color: rgb(228, 235, 227);
   margin-top: -1.5em;
-  
 }
 .nav {
  display: flex;
  justify-content: center;
  gap: 80px;
  margin-top: -2em;
+}
+.nav>a{
+  text-decoration: none;
 }
 
 .headerSection{
@@ -29,8 +31,8 @@ position: fixed;
    z-index: 999; 
    background-color: rgb(7, 116, 49);
    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/doiwe9d5a/image/upload/v1772735135/gambia_rice_fiield_qhc9oo.webp");
-
   }
+
 .gambiaLogo{
     display: block;
     margin: 0 auto;

@@ -20,7 +20,6 @@ function FarmMap({lat,lng,name}){
             A pin showing the farm location
          </Popup>
       </Marker>
-
     </MapContainer>
  )
 }

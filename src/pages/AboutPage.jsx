@@ -22,7 +22,7 @@ const [isSubmitted, setIsSubmitted] = useState(false)
  
   const handleSubmit = (e) => {
     e.preventDefault();
-    //validate email
+
     if (!formData.email.includes('@')) {
     setErrors({ email: 'Please enter a valid email address' })
     return
@@ -30,7 +30,6 @@ const [isSubmitted, setIsSubmitted] = useState(false)
 
   setErrors({})
   console.log('Form submitted:', formData)
-  //reset the form
   setFormData({ name: '', email: '', subject: '', message: '' })
 
    setIsSubmitted(true); 

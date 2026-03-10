@@ -2,6 +2,8 @@ import '../App.css'
 import FarmMap from '../shared/FarmMap';
 import styles from './FarmDetailPage.module.css';
 import { useParams, useNavigate, } from "react-router"
+import Card from '../shared/Card';
+
 
 
 
@@ -19,9 +21,10 @@ if (!farm){
 const isSaved=savedFarms.includes(farm.id)
    
 return (
-    <>
+    <div className={styles.pageContainer}>
+    <Card>
     <h2 className={styles.farmName}>{farm.name}</h2>
-    <h3 className={styles.area}>Area:{farm.area}</h3>
+    <h3 className={styles.area}>Area: {farm.area}</h3>
      <ul className={styles.product}>
       {farm.produce.map((produce) => (
         <li key={produce}>{produce}</li>
@@ -31,16 +34,17 @@ return (
     <span className={styles.phone}>{farm.phone}</span>
     <div className={styles.socialMedia}>
         {farm.socialMedia && Object.entries(farm.socialMedia).map(([platform, url])=>(
-           <a key={platform} href={url} target="_blank" rel="noreferrer">
+           <a key={platform} href= {url} target="_blank" rel="noreferrer">
             {platform}
            </a> 
         ))}
     </div>
-    <span className={styles.typeFarm}>Farm Type:{farm.type}</span>
+    <span className={styles.typeFarm}>Farm Type: {farm.type}</span>
     <button className={styles.back} onClick={() => navigate(-1)}>Back</button>
     <button className={styles.save} onClick={() => handleToggleSave(farm.id)}>{isSaved? 'Unsave':'Save'}</button>
     <FarmMap lat={farm.lat} lng={farm.lng} name={farm.name}/>
-    </>
+    </Card>
+    </div>
 )
 }
 

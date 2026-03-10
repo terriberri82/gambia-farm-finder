@@ -8,7 +8,7 @@ function HomePage({allFarms}){
 const [searchValue, setSearchValue] = useState('')
 const [hasSearched, setHasSearched] = useState(false)
 
-//handler function
+
  const onSubmit =() => {
     console.log('submit clicked', searchValue)
     setHasSearched(true);

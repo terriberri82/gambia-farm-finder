@@ -1,13 +1,17 @@
 :root {
-  --font-body: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --font-heading: ui-serif, Georgia, "Times New Roman", Times, serif;
+  --font-body: 'Roboto', sans-serif;
+  --font-heading: 'Special Elite', cursive;
   background-color: white;
-
-  justify-content: center;
+  color: black;
 }
 
 body {
-  font-family: var(--font-body);
+   font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+
 }
 h1,
 h2,
@@ -34,5 +38,7 @@ li {
   color: black;
 }
 main{
-     padding-top: 200px; 
+     padding-top: 160px; 
+     
+ width: 100%;
 }
