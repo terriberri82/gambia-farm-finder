@@ -7,7 +7,7 @@ import SavedFarmPage from './pages/SavedFarmPage.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
 import Header from './shared/Header.jsx'
-import { useState, useEffect} from 'react';
+import { useState, useEffect, useCallback} from 'react';
 
 const url = import.meta.env.VITE_JSONBIN_URL
 
@@ -20,13 +20,17 @@ function App() {
  
 
   //handler function 
-const handleToggleSave = (farmId) => {
+
+
+const handleToggleSave= useCallback(
+  (farmId) => {
   const updatedSaved = savedFarms.includes(farmId)
     ? savedFarms.filter(id => id !== farmId)
     : [...savedFarms, farmId]
   setSavedFarms(updatedSaved)
   localStorage.setItem("savedFarms", JSON.stringify(updatedSaved))
-}
+  },[savedFarms]);
+
   //useEffect
 useEffect(() => {
   const fetchAllFarms = async () => {
@@ -58,6 +62,7 @@ useEffect(() => {
   return (
     <main>
       <Header title="Gambia Farm Finder" /> 
+      {isLoading && <p>Loading...</p>}
       <Routes>
       <Route path="/" element={<HomePage allFarms={allFarms} handleSave={handleToggleSave}/>} />
       <Route path="/about" element={<AboutPage />} />
@@ -66,7 +71,7 @@ useEffect(() => {
       <Route path="/saved" element={<SavedFarmPage savedFarms={savedFarms} allFarms={allFarms}/>} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
-    
+    {error && <p>Something went wrong: {error.message}</p>}
     </main>
       
   
