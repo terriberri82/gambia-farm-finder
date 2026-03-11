@@ -1,7 +1,7 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import styles from './FarmMap.module.css';
 
-function FarmMap({ lat, lng, name }) {
+function FarmMap({ lat, lng }) {
   const farmPosition = [lat, lng];
   const initialZoom = 13;
 
