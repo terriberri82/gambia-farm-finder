@@ -115,7 +115,7 @@ function AboutPage() {
             </button>
           </form>
         ) : (
-          <div className="success-message">
+          <div className={styles.success}>
             <h2>Success! Your form has been submitted.</h2>
             <button onClick={() => setIsSubmitted(false)}>
               Submit Another Form

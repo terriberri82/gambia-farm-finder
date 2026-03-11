@@ -7,6 +7,8 @@ function FarmCard({
   viewProduce,
   viewFarmType,
   farmId,
+  showUnSave,
+  onUnSave
 }) {
   return (
     <Card>
@@ -19,6 +21,7 @@ function FarmCard({
       </ul>
       <span>Farm Type: {viewFarmType}</span>
       <Link to={`/farms/${farmId}`}>View Details</Link>
+      {showUnSave && <button onClick={() => onUnSave(farmId)}>Unsave</button>}
     </Card>
   );
 }

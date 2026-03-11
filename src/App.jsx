@@ -79,7 +79,8 @@ function App() {
         <Route
           path="/saved"
           element={
-            <SavedFarmPage savedFarms={savedFarms} allFarms={allFarms} />
+            <SavedFarmPage savedFarms={savedFarms} allFarms={allFarms}
+            handleToggleSave={handleToggleSave} />
           }
         />
         <Route path="*" element={<NotFoundPage />} />

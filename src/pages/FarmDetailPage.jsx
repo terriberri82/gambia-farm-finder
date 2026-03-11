@@ -12,7 +12,7 @@ function FarmDetailPage({ allFarms, handleToggleSave, savedFarms }) {
   }
   const farm = allFarms.find((farm) => farm.id === id);
   if (!farm) {
-    return <p>Farm Not Found!</p>;
+    return <h3 className={styles.notFoundMessage}>Farm Not Found!</h3>;
   }
 
   const isSaved = savedFarms.includes(farm.id);
@@ -28,7 +28,7 @@ function FarmDetailPage({ allFarms, handleToggleSave, savedFarms }) {
           ))}
         </ul>
         <p className={styles.description}>{farm.description}</p>
-        <span className={styles.phone}>{farm.phone}</span>
+        <span className={styles.phone}>Phone #: {farm.phone}</span>
         <div className={styles.socialMedia}>
           {farm.socialMedia &&
             Object.entries(farm.socialMedia).map(([platform, url]) => (

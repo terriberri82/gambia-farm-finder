@@ -37,6 +37,9 @@ li {
   color: black;
 }
 main {
-  padding-top: 150px;
+
   width: 100%;
+}
+h2{
+  color: rgb(9, 99, 9);
 }

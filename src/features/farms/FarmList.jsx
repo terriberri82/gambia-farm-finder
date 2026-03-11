@@ -1,8 +1,8 @@
 import FarmCard from './FarmCard';
 
-function FarmList({ allFarms }) {
+function FarmList({ allFarms, showUnSave, onUnSave}) {
   return (
-    <div className="farm-list-container">
+    <div>
       {allFarms &&
         allFarms.map((farm) => (
           <FarmCard
@@ -12,6 +12,8 @@ function FarmList({ allFarms }) {
             viewArea={farm.area}
             viewProduce={farm.produce}
             viewFarmType={farm.type}
+            showUnSave={showUnSave}
+            onUnSave={onUnSave}
           />
         ))}
     </div>
